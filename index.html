@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="id">
+  <!-- [Previous head section remains the same] -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SKI - Sie Kerohanian Islam</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-green-600 fixed w-full z-50">
+      <div class="max-w-screen-xl mx-auto px-4">
+        <div class="relative">
+          <div class="flex items-center justify-between h-16">
+            <!-- Logo dan Tulisan SKI - Menggunakan flex-1 untuk distribusi ruang -->
+            <div class="flex items-center justify-between md:justify-start flex-1 md:flex-none">
+              <!-- Container untuk logo -->
+              <div class="flex items-center md:mr-3">
+                <img src="img/logo_SKI2.jpeg" alt="logo_ski" class="w-10 h-10 md:w-14 md:h-14 mr-2 rounded-full">
+                <img src="img/logo_dlanggu.jpeg" alt="logo_ski" class="w-10 h-10 md:w-14 md:h-14 rounded-full">
+              </div>
+              
+              <!-- Tulisan SMKN 1 Dlanggu - Posisi tengah di mobile -->
+              <span class="text-white text-sm md:text-xl font-bold text-center flex-1 md:flex-none md:ml-2">SKI SMKN 1 Dlanggu</span>
+              
+              <!-- Spacer untuk mobile menu button -->
+              <div class="md:hidden">
+                <button id="menu-toggle" class="text-white hover:bg-green-700 p-2 rounded">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+    
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-4">
+              <button onclick="navigateToPage('home')" class="text-white hover:bg-green-700 px-3 py-2 rounded text-lg font-bold">
+                Home
+              </button>
+              <button onclick="navigateToPage('about')" class="text-white hover:bg-green-700 px-3 py-2 rounded text-lg font-bold">
+                About
+              </button>
+              <button onclick="navigateToPage('kegiatan')" class="text-white hover:bg-green-700 px-3 py-2 rounded text-lg font-bold">
+                Galeri
+              </button>
+              <button onclick="navigateToPage('contact')" class="text-white hover:bg-green-700 px-3 py-2 rounded text-lg font-bold">
+                Contact
+              </button>
+            </div>
+          </div>
+    
+          <!-- Mobile Menu (Hidden by default) -->
+          <div id="mobile-menu" class="hidden md:hidden">
+            <div class="flex flex-col space-y-2 pb-3">
+              <button onclick="navigateToPage('home')" class="text-white hover:bg-green-700 px-3 py-2 rounded text-lg font-bold">
+                Home
+              </button>
+              <button onclick="navigateToPage('about')" class="text-white hover:bg-green-700 px-3 py-2 rounded text-lg font-bold">
+                About
+              </button>
+              <button onclick="navigateToPage('kegiatan')" class="text-white hover:bg-green-700 px-3 py-2 rounded text-lg font-bold">
+                Galeri
+              </button>
+              <button onclick="navigateToPage('contact')" class="text-white hover:bg-green-700 px-3 py-2 rounded text-lg font-bold">
+                Contact
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+      
+    <!-- Content Pages -->
+    <div class="pt-16">
+      <!-- Home Page -->
+      <div id="home" class="page active">
+        <div class="relative">
+          <img
+            src="img/banner.jpeg"
+            alt="Banner SKI"
+            class="w-full h-[600px] object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+          >
+            <div class="text-center text-white">
+              <h1 class="text-4xl font-bold mb-4">Sie Kerohanian Islam</h1>
+              <p class="text-xl">
+                Membentuk Generasi Muslim yang Berakhlak dan Berprestasi
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="max-w-screen-xl mx-auto px-4 py-12">
+          <h2 class="text-3xl font-bold text-center mb-8">
+            Selamat Datang di SKI
+          </h2>
+          <p class="text-lg text-gray-700 text-center mb-8">
+            SKI adalah organisasi yang bergerak dalam bidang kerohanian Islam,
+            bertujuan untuk meningkatkan pemahaman dan pengamalan nilai-nilai
+            Islam di lingkungan sekolah.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-xl font-bold mb-4">Visi</h3>
+              <p>
+                Mewujudkan generasi muslim yang berakhlak mulia dan berprestasi.
+              </p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-xl font-bold mb-4">Misi</h3>
+              <p>
+                <!-- Menyelenggarakan kegiatan-kegiatan keislaman yang edukatif dan
+                inspiratif. -->
+                Mengajak untuk mengikuti kegiatan-kegiatan keislaman yang
+                edukatif dan inspiratif
+              </p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h3 class="text-xl font-bold mb-4">Nilai</h3>
+              <p>
+                Menjunjung tinggi nilai-nilai Islam dalam setiap kegiatan dan
+                interaksi.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- About Page -->
+      <div id="about" class="page hidden">
+        <div class="max-w-screen-xl mx-auto px-4 py-12">
+          <h2 class="text-3xl font-bold text-center mb-8">Tentang SKI</h2>
+          <div class="bg-white p-8 rounded-lg shadow">
+            <p class="text-lg mb-6">
+              Sie Kerohanian Islam (SKI) adalah organisasi ekstrakurikuler yang
+              berfokus pada pengembangan spiritual dan karakter islami siswa.
+              Didirikan dengan tujuan untuk menciptakan lingkungan yang kondusif
+              bagi pengembangan nilai-nilai keislaman di sekolah.
+            </p>
+            <p class="text-lg mb-6">Kegiatan-kegiatan kami mencakup:</p>
+            <ul class="list-disc pl-6 mb-6">
+              <li class="mb-2">Kegiatan Banjari</li>
+              <li class="mb-2">Kegiatan Qiroah</li>
+              <li class="mb-2">Tahfidz Qur'an</li>
+              <li class="mb-2">Kegiatan Jum'at Berkah</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Kegiatan Page -->
+      <div id="kegiatan" class="page min-h-screen bg-gray-50 hidden">
+        <div class="max-w-screen-xl mx-auto px-4 py-8 md:py-12">
+          <h2 class="text-3xl font-bold text-center mb-8">Galeri Kegiatan</h2>
+
+          <div class="space-y-6 md:space-y-8">
+            <h3 class="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-8">Kegiatan Ekstra SKI di dalam sekolah</h3>
+            <!-- First Slider - Galeri Kegiatan -->
+            <div class="relative bg-white p-4 rounded-lg shadow mb-12">
+              <div
+                id="slider-container-1"
+                class="relative h-[300px] md:h-[400px] overflow-hidden rounded-lg"
+              >
+                <!-- Slide 1 -->
+                <!-- Ekstra Banjari -->
+                <div class="slide-1 absolute w-full h-full">
+                  <img
+                    src="img/banjari.jpeg"
+                    class="w-full h-full object-cover"
+                    alt="Banjari"
+                  />
+                  <div
+                    class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-3 md:p-4"
+                  >
+                    <h3 class="text-lg md:text-xl font-bold">Ekstra Banjari</h3>
+                    <p class="text-sm md:text-base">Belajar banjari bersama semua anggota SKI.</p>
+                  </div>
+                </div>
+  
+                <!-- Slide 2 -->
+                <!-- Qiroah -->
+                <div class="slide-1 absolute w-full h-full hidden">
+                  <img
+                    src="img/qiroah.jpeg"
+                    class="w-full h-full object-cover"
+                    alt="Maulid Nabi"
+                  />
+                  <div
+                    class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4"
+                  >
+                    <h3 class="text-lg md:text-xl font-bold">Qiroah</h3>
+                    <p class="text-sm md:text-base">
+                      Belajar Qiroah(membaca Al-quran dengan indah) bersama semua
+                      anggota SKI.
+                    </p>
+                  </div>
+                </div>
+  
+                <!-- Slide 3 -->
+                <!-- Tahfidz -->
+                <div class="slide-1 absolute w-full h-full hidden">
+                  <img
+                    src="img/tahfidz.jpeg"
+                    class="w-full h-full object-cover"
+                    alt="Bakti Sosial"
+                  />
+                  <div
+                    class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4"
+                  >
+                    <h3 class="text-lg md:text-xl font-bold">Tahfidz</h3>
+                    <p class="text-sm md:text-base">
+                      Belajar Tahfidz(Hafalan Al-quran) bersama semua anggota SKI
+                    </p>
+                  </div>
+                </div>
+  
+                <!-- Slide 4 -->
+                <!-- Kitab -->
+                <div class="slide-1 absolute w-full h-full hidden">
+                  <img
+                    src="img/kitab.jpeg"
+                    class="w-full h-full object-cover"
+                    alt="Kitab"
+                  />
+                  <div
+                    class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4"
+                  >
+                    <h3 class="text-lg md:text-xl font-bold">Kitab</h3>
+                    <p class="text-sm md:text-base">Belajar Kitab bersama semua anggota SKI</p>
+                  </div>
+                </div>
+  
+                <!-- Slide 5 -->
+                <!-- Jum'at Berkah -->
+                <div class="slide-1 absolute w-full h-full hidden">
+                  <img
+                    src="img/jum'at_berkah.jpeg"
+                    class="w-full h-full object-cover"
+                    alt="Bakti Sosial"
+                  />
+                  <div
+                    class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4"
+                  >
+                    <h3 class="text-lg md:text-xl font-bold">Jum'at Berkah</h3>
+                    <p class="text-sm md:text-base">Berbagi keberkahan di hari Jum'at</p>
+                  </div>
+                </div>
+  
+                <!-- Slide 6 -->
+                <!-- Isra Miraj -->
+                <div class="slide-1 absolute w-full h-full hidden">
+                <img
+                  src="img/isra_miraj.jpeg"
+                  class="w-full h-full object-cover"
+                  alt="Ramadhan"
+                />
+                  <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
+                    <h3 class="text-lg md:text-xl font-bold">
+                      Mengisi Acara Peringatan Isra Miraj di Sekolah SMKN 1 Dlanggu
+                    </h3>
+                    <p class="text-sm md:text-base">
+                      Mengisi Acara Perayaan Isra Miraj dengan menampilkan Banjari
+                      dan Qiroah
+                    </p>
+                  </div>
+                </div>
+  
+              </div>
+  
+              <!-- Navigation Buttons -->
+              <button
+                onclick="prevSlide1()"
+                class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 text-gray-800 p-2 rounded-full hover:bg-opacity-75 focus:outline-none"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 19l-7-7 7-7"
+                  ></path>
+                </svg>
+              </button>
+              <button
+                onclick="nextSlide1()"
+                class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 text-gray-800 p-2 rounded-full hover:bg-opacity-75 focus:outline-none"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+  
+            <!-- Thumbnails -->
+            <div class="overflow-x-auto pb-4">
+              <div class="thumbnail-container flex gap-4 md:justify-center min-w-max px-4">
+                <!-- Banjari -->
+                <div
+                  class="thumbnail-1 w-20 h-20 flex-shrink-0 cursor-pointer overflow-hidden rounded-lg shadow hover:opacity-75 transition-opacity"
+                  onclick="goToSlide1(0)"
+                >
+                  <img
+                    src="img/banjari.jpeg"
+                    class="w-full h-full object-cover"
+                    alt="Thumbnail Banjari"
+                  />
+                </div>
+
+                <!-- Qiroah -->
+                <div
+                  class="thumbnail-1 w-20 h-20 flex-shrink-0 cursor-pointer overflow-hidden rounded-lg shadow hover:opacity-75 transition-opacity"
+                  onclick="goToSlide1(1)"
+                >
+                  <img
+                    src="img/qiroah.jpeg"
+                    class="w-full h-full object-cover"
+                    alt="Thumbnail Qiroah"
+                  />
+                </div>
+
+                <!-- Tahfidz -->
+                <div
+                  class="thumbnail-1 w-20 h-20 flex-shrink-0 cursor-pointer overflow-hidden rounded-lg shadow hover:opacity-75 transition-opacity"
+                  onclick="goToSlide1(2)"
+                >
+                  <img
+                    src="img/tahfidz.jpeg"
+                    class="w-full h-full object-cover"
+                    alt="Thumbnail Tahfidz"
+                  />
+                </div>
+
+                <!-- Kitab -->
+                <div
+                  class="thumbnail-1 w-20 h-20 flex-shrink-0 cursor-pointer overflow-hidden rounded-lg shadow hover:opacity-75 transition-opacity"
+                  onclick="goToSlide1(3)"
+                >
+                  <img
+                    src="img/kitab.jpeg"
+                    class="w-full h-full object-cover"
+                    alt="Thumbnail Kitab"
+                  />
+                </div>
+
+                <!-- Jum'at Berkah -->
+                <div
+                  class="thumbnail-1 w-20 h-20 flex-shrink-0 cursor-pointer overflow-hidden rounded-lg shadow hover:opacity-75 transition-opacity"
+                  onclick="goToSlide1(4)"
+                >
+                  <img
+                    src="img/jum'at_berkah.jpeg"
+                    class="w-full h-full object-cover"
+                    alt="Thumbnail Jum'at Berkah"
+                  />
+                </div>
+
+                <!-- Isra Miraj -->
+                <div
+                  class="thumbnail-1 w-20 h-20 flex-shrink-0 cursor-pointer overflow-hidden rounded-lg shadow hover:opacity-75 transition-opacity"
+                  onclick="goToSlide1(5)"
+                >
+                  <img
+                    src="img/isra_miraj.jpeg"
+                    class="w-full h-full object-cover"
+                    alt="Thumbnail Isra Miraj"
+                  />
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- Second Slider - Kegiatan Lainnya -->
+        <h3 class="text-2xl font-bold mb-6">Kegiatan di luar sekolah</h3>
+        <div class="relative bg-white p-4 rounded-lg shadow mb-12">
+          <div
+            id="slider-container-2"
+            class="relative h-[250px] md:h-[400px] overflow-hidden rounded-lg"
+          >
+            <!-- Slide 1 -->
+            <div class="slide-2 absolute w-full h-full">
+              <div class="w-full h-full flex items-center bg-gray-100">
+                <img
+                  src="img/fesban.jpeg"
+                  class="w-full h-auto max-h-full object-contain"
+                  alt="Tahfidz"
+                />
+              </div>
+              <div
+                class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-3 md:p-4"
+              >
+                <h3 class="text-lg md:text-xl font-bold">
+                  Mengikuti Fesban
+                </h3>
+                <p class="text-sm md:text-base">
+                  Mengikuti acara Fesban atau Festival Banjari di luar Sekolah
+                </p>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide-2 absolute w-full h-full hidden">
+              <div class="w-full h-full flex items-center bg-gray-100">
+                <img
+                  src="img/banjari_diluar.jpeg"
+                  class="w-full h-auto max-h-full object-contain"
+                  alt="Kajian"
+                />
+              </div>
+              <div
+                class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-3 md:p-4"
+              >
+                <h3 class="text-lg md:text-xl font-bold">
+                  Mengisi acara banjari diluar sekolah SMKN 1 Dlanggu
+                </h3>
+                <p class="text-sm md:text-base">
+                  Kegiatan bakti sosial ke panti asuhan dan masyarakat sekitar.
+                </p>
+              </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <button
+              onclick="prevSlide2()"
+              class="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 text-gray-800 p-1.5 md:p-2 rounded-full hover:bg-opacity-75 focus:outline-none shadow-md"
+            >
+              <svg
+                class="w-4 h-4 md:w-6 md:h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                ></path>
+              </svg>
+            </button>
+            <button
+              onclick="nextSlide2()"
+              class="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 text-gray-800 p-1.5 md:p-2 rounded-full hover:bg-opacity-75 focus:outline-none shadow-md"
+            >
+              <svg
+                class="w-4 h-4 md:w-6 md:h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+          <!-- Thumbnails -->
+          <div class="flex justify-center space-x-4 mt-4">
+            <div class="thumbnail-container flex gap-4">
+
+              <!-- Fesban -->
+              <div
+                class="thumbnail-2 w-20 h-20 cursor-pointer overflow-hidden rounded-lg shadow hover:opacity-75 transition-opacity"
+                onclick="goToSlide2(0)"
+              >
+                <img
+                  src="img/fesban.jpeg"
+                  class="w-full h-full object-cover"
+                  alt="Thumbnail Tahfidz"
+                />
+              </div>
+
+              <!-- Banjari Diluar -->
+              <div
+                class="thumbnail-2 w-20 h-20 cursor-pointer overflow-hidden rounded-lg shadow hover:opacity-75 transition-opacity"
+                onclick="goToSlide2(1)"
+              >
+                <img
+                  src="img/banjari_diluar.jpeg"
+                  class="w-full h-full object-cover"
+                  alt="Thumbnail Ramadhan"
+                />
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Contact Page -->
+    <div id="contact" class="page hidden">
+      <div class="max-w-screen-xl mx-auto px-4 py-12">
+        <h2 class="text-3xl font-bold text-center mb-8">Hubungi Kami</h2>
+        <div class="bg-white p-8 rounded-lg shadow max-w-md mx-auto">
+          <div class="mb-6">
+            <h3 class="font-bold text-xl mb-2">Ketua SKI</h3>
+            <p class="mb-1">Muhammad Faizin</p>
+            <p class="text-green-600"><a href="https://wa.me/6281357073330">+62 813-5707-3330</a></p>
+          </div>
+          <div class="mb-6">
+            <h3 class="font-bold text-xl mb-2">Lokasi</h3>
+            <p>Masjid SMKN 1 Dlanggu</p>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl mb-2">Media Sosial</h3>
+            <div class="flex space-x-4">
+              <a href="https://www.instagram.com/ski.rohisbi?igsh=YzljYTk1ODg3Zg==" class="text-green-600 hover:text-green-700"
+                >Instagram</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-green-600 text-white py-8">
+      <div class="max-w-screen-xl mx-auto px-4">
+        <div class="text-center">
+          <p class="mb-2">Sie Kerohanian Islam 2024/2025</p>
+          <p>Dibuat oleh anggota Ekstrakurikuler SKI</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      let currentSlide1 = 0;
+      let currentSlide2 = 0;
+      const slides1 = document.querySelectorAll(".slide-1");
+      const slides2 = document.querySelectorAll(".slide-2");
+      const thumbnails1 = document.querySelectorAll(".thumbnail-1");
+      const thumbnails2 = document.querySelectorAll(".thumbnail-2");
+      
+
+          // Get necessary elements
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    // Toggle menu function
+    function toggleMenu() {
+      mobileMenu.classList.toggle('hidden');
+    }
+    
+    // Add click event to menu toggle button
+    menuToggle.addEventListener('click', toggleMenu);
+    
+    // Function to handle navigation and menu closing
+    function navigateToPage(page) {
+      // Close mobile menu
+      mobileMenu.classList.add('hidden');
+      
+      // Call your existing showPage function
+      showPage(page);
+    }
+    
+    // Optional: Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      const isMenuButton = e.target.closest('#menu-toggle');
+      const isMenu = e.target.closest('#mobile-menu');
+      
+      if (!isMenuButton && !isMenu) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+
+
+      // Functions for first slider
+      function showSlide1(index) {
+        slides1.forEach((slide) => slide.classList.add("hidden"));
+        slides1[index].classList.remove("hidden");
+
+        thumbnails1.forEach((thumb) =>
+          thumb.classList.remove("ring-2", "ring-green-500")
+        );
+        thumbnails1[index].classList.add("ring-2", "ring-green-500");
+      }
+
+      function nextSlide1() {
+        currentSlide1 = (currentSlide1 + 1) % slides1.length;
+        showSlide1(currentSlide1);
+      }
+
+      function prevSlide1() {
+        currentSlide1 = (currentSlide1 - 1 + slides1.length) % slides1.length;
+        showSlide1(currentSlide1);
+      }
+
+      function goToSlide1(index) {
+        currentSlide1 = index;
+        showSlide1(currentSlide1);
+      }
+
+      // Functions for second slider
+      function showSlide2(index) {
+        slides2.forEach((slide) => slide.classList.add("hidden"));
+        slides2[index].classList.remove("hidden");
+
+        thumbnails2.forEach((thumb) =>
+          thumb.classList.remove("ring-2", "ring-green-500")
+        );
+        thumbnails2[index].classList.add("ring-2", "ring-green-500");
+      }
+
+      function nextSlide2() {
+        currentSlide2 = (currentSlide2 + 1) % slides2.length;
+        showSlide2(currentSlide2);
+      }
+
+      function prevSlide2() {
+        currentSlide2 = (currentSlide2 - 1 + slides2.length) % slides2.length;
+        showSlide2(currentSlide2);
+      }
+
+      function goToSlide2(index) {
+        currentSlide2 = index;
+        showSlide2(currentSlide2);
+      }
+      function showPage(pageId) {
+        document.querySelectorAll(".page").forEach((page) => {
+          page.classList.add("hidden");
+          page.classList.remove("active");
+        });
+
+        const selectedPage = document.getElementById(pageId);
+        selectedPage.classList.remove("hidden");
+        selectedPage.classList.add("active");
+      }
+
+      // Inisialisasi tampilan awal
+      showSlide1(0);
+      showSlide2(0);
+    </script>
+  </body>
+</html>
